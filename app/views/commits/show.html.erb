@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Commiter name:</strong>
+  <%= @commit.commiter_name %>
+</p>
+
+<p>
+  <strong>Commiter email:</strong>
+  <%= @commit.commiter_email %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @commit.message %>
+</p>
+
+<p>
+  <strong>Commit url:</strong>
+  <%= @commit.commit_url %>
+</p>
+
+<p>
+  <strong>Profile url:</strong>
+  <%= @commit.profile_url %>
+</p>
+
+<p>
+  <strong>Commit date:</strong>
+  <%= @commit.commit_date %>
+</p>
+
+<%= link_to 'Edit', edit_commit_path(@commit) %> |
+<%= link_to 'Back', commits_path %>

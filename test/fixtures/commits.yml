@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  commiter_name: MyString
+  commiter_email: MyString
+  message: MyString
+  commit_url: MyString
+  profile_url: MyString
+  commit_date: 2019-06-03 09:33:56
+
+two:
+  commiter_name: MyString
+  commiter_email: MyString
+  message: MyString
+  commit_url: MyString
+  profile_url: MyString
+  commit_date: 2019-06-03 09:33:56

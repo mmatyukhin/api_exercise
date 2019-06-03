@@ -1,0 +1,47 @@
+<%= form_with(model: commit, local: true) do |form| %>
+  <% if commit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(commit.errors.count, "error") %> prohibited this commit from being saved:</h2>
+
+      <ul>
+      <% commit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :commiter_name %>
+    <%= form.text_field :commiter_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :commiter_email %>
+    <%= form.text_field :commiter_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :message %>
+    <%= form.text_field :message %>
+  </div>
+
+  <div class="field">
+    <%= form.label :commit_url %>
+    <%= form.text_field :commit_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :profile_url %>
+    <%= form.text_field :profile_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :commit_date %>
+    <%= form.datetime_select :commit_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
