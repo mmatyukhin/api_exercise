@@ -4,6 +4,7 @@ class CommitsController < ApplicationController
   # GET /commits
   # GET /commits.json
   def index
+    Commit.load(search_params) if search_params.present? && Commit.any? == false
     @commits = Commit.all
   end
 
@@ -70,5 +71,8 @@ class CommitsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def commit_params
       params.require(:commit).permit(:commiter_name, :commiter_email, :message, :commit_url, :profile_url, :commit_date)
+    end
+    def search_params
+      params.permit(:owner, :repo, :author_email)
     end
 end
