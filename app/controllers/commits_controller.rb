@@ -4,7 +4,7 @@ class CommitsController < ApplicationController
   # GET /commits
   # GET /commits.json
   def index
-    Commit.load(search_params) if search_params.present? && Commit.any? == false
+    Commit.load(search_params) if search_params.present?
     @commits = Commit.all
   end
 
