@@ -57,8 +57,8 @@ class CommitsController < ApplicationController
   def destroy
     @commit.destroy
     respond_to do |format|
-      format.html { redirect_to commits_url, notice: 'Commit was successfully destroyed.' }
-      format.json { head :no_content }
+      format.js
+      format.html { redirect_to commits_url }
     end
   end
 
