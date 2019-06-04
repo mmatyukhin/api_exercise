@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class="text-center">
   <%= form_tag commits_url, method: :get, class: 'mb-4' do %>
-      <div class="inline-block mb-2">
+      <div class="inline-block m-2">
         <%= label_tag :owner, 'Owner', class: 'px-3'%>
         <%= text_field_tag :owner, params[:owner], placeholder: 'Owner',
                            class: 'px-3 py-2 rounded shadow', required: true %>
