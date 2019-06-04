@@ -14,4 +14,8 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require select_all.js
 //= require_tree .
+$(function() {
+  $("#selectAll").select_all();
+});

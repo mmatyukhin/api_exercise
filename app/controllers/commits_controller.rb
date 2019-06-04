@@ -61,6 +61,13 @@ class CommitsController < ApplicationController
       format.html { redirect_to commits_url }
     end
   end
+  def destroy_multiple
+    Commit.where(:id => params[:commit_ids]).delete_all
+    respond_to do |format|
+      format.js
+      format.html { redirect_to commits_url }
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

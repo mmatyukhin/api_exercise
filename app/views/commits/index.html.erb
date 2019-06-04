@@ -20,12 +20,15 @@
   <% end %>
   <%= link_to 'Clear params', root_url, class: 'bg-teal-500 hover:bg-teal-600 border rounded py-2 px-3 hover:text-black text-black'%>
 </div>
-<div class="commits">
-  <% if @commits.blank? %>
-    <div class="p-4 text-xl text-center">Nothing found, try search with other parameters</div>
-  <% end %>
-  <%= render @commits %>
-  <div class="text-center">
-    <%= paginate @commits %>
-  </div>
+<% if @commits.blank? %>
+  <div class="p-4 text-xl text-center">Nothing found, try search with other parameters</div>
+<% end %>
+<%= form_tag destroy_multiple_commits_path, method: :delete, remote: true do %>
+  <%= render @commits, id: 'commits'%>
+<div class="text-center pb-2">
+  <%= submit_tag "Delete selected", data: { confirm: 'Are you sure?'}, class:'destroy_multiple items-center bg-teal-500 hover:bg-teal-600 border rounded py-2 px-3 hover:text-black text-black' %>
+</div>
+<% end %>
+<div class="text-center">
+  <%= paginate @commits %>
 </div>
