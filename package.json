@@ -2,6 +2,11 @@
   "name": "api_exercise",
   "private": true,
   "dependencies": {
+    "@rails/webpacker": "^4.0.7",
     "jquery": "^3.4.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^1.0.3",
+    "webpack-dev-server": "^3.5.1"
   }
 }

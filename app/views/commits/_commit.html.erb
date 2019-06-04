@@ -1,27 +1,27 @@
+<div class="w-5/6 mx-auto">
+  <div class="bg-white shadow-md rounded my-6">
+    <table class="text-left w-full border-collapse">
+      <thead>
+        <tr>
+          <th class="w-1/5 py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-r -grey-light">Commiter name</th>
+          <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-r border-grey-light">Commiter email</th>
+          <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-r border-grey-light">Message</th>
+          <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-r border-grey-light">Commit date</th>
+          <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light" colspan="3">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="hover:bg-grey-lighter">
+            <td class="w-1/5 py-4 px-6 border-b border-grey-light">
+            <%= link_to "#{commit.commiter_name}","#{commit.profile_url}", class: "hover:bg-transparent hover:text-black"%>
+            </td>
+            <td class="w-1/5 py-4 px-6 border-b border-grey-light"><%= commit.commiter_email %></td>
+            <td class="w-1/5 py-4 px-6 border-b border-grey-light"><%= commit.message %></td>
+            <td class="w-1/5 py-4 px-6 border-b border-grey-light"><%= commit.commit_date %></td>
+            <td><%= link_to 'Show on github', "#{commit.commit_url}", class: "w-1/5 py-4 px-6 hover:text-black hover:bg-transparent" %></td>
+            <td><%= link_to 'Destroy', commit, method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: "delete hover:text-black hover:bg-transparent" %></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-<table>
-  <thead>
-    <tr>
-      <th>Commiter name</th>
-      <th>Commiter email</th>
-      <th>Message</th>
-      <th>Commit url</th>
-      <th>Profile url</th>
-      <th>Commit date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><%= commit.commiter_name %></td>
-        <td><%= commit.commiter_email %></td>
-        <td><%= commit.message %></td>
-        <td><%= commit.commit_url %></td>
-        <td><%= commit.profile_url %></td>
-        <td><%= commit.commit_date %></td>
-        <td><%= link_to 'Show', commit %></td>
-        <td><%= link_to 'Edit', edit_commit_path(commit) %></td>
-        <td><%= link_to 'Destroy', commit, method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: "delete" %></td>
-      </tr>
-  </tbody>
-</table>

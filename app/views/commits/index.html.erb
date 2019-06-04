@@ -1,25 +1,28 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Commits</h1>
-<div class="">
-<%= form_tag commits_url, method: :get, class: 'mb-4' do %>
-    <div class="mb-2">
-      <%= label_tag :owner, 'owner' %>
-      <%= text_field_tag :owner, params[:owner], placeholder: 'owner',
-                         class: 'px-3 py-2 rounded shadow' %>
-    </div>
-    <div class="mb-2">
-      <%= label_tag :repo, 'repo' %>
-      <%= text_field_tag :repo, params[:repo], placeholder: 'repo',
-                         class: 'px-3 py-2 rounded shadow' %>
-    </div>
-    <div class="mb-2">
-      <%= label_tag :start_date, 'author_email' %>
-      <%= text_field_tag :author_email, params[:author_email], placeholder: 'author_email',
-                         class: 'px-3 py-2 rounded shadow' %>
-    </div>
-  <%= submit_tag 'Search', class: 'bg-white border rounded py-2 px-3' %>
-<% end %>
+<div class="text-center">
+  <%= form_tag commits_url, method: :get, class: 'mb-4' do %>
+      <div class="inline-block mb-2">
+        <%= label_tag :owner, 'Owner', class: 'px-3'%>
+        <%= text_field_tag :owner, params[:owner], placeholder: 'Owner',
+                           class: 'px-3 py-2 rounded shadow' %>
+      </div>
+      <div class="inline-block m-2">
+        <%= label_tag :repo, 'Repository' %>
+        <%= text_field_tag :repo, params[:repo], placeholder: 'Repository',
+                           class: 'px-3 py-2 rounded shadow' %>
+      </div>
+      <div class="inline-block m-2">
+        <%= label_tag :start_date, 'Author email' %>
+        <%= text_field_tag :author_email, params[:author_email], placeholder: 'Author email',
+                           class: 'px-3 py-2 rounded shadow' %>
+      </div>
+      <%= submit_tag 'Search', class: 'bg-teal-500 hover:bg-teal-600 border rounded py-2 px-3' %>
+  <% end %>
+  <%= link_to 'Clear params', root_url, class: 'bg-teal-500 hover:bg-teal-600 border rounded py-2 px-3 hover:text-black text-black'%>
+</div>
 <div class="commits">
+  <% if @commits.blank? %>
+    <div class="p-4 text-xl text-center">Nothing found, try search with other parameters</div>
+  <% end %>
   <%= render @commits %>
 </div>
