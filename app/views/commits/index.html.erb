@@ -4,17 +4,17 @@
       <div class="inline-block mb-2">
         <%= label_tag :owner, 'Owner', class: 'px-3'%>
         <%= text_field_tag :owner, params[:owner], placeholder: 'Owner',
-                           class: 'px-3 py-2 rounded shadow' %>
+                           class: 'px-3 py-2 rounded shadow', required: true %>
       </div>
       <div class="inline-block m-2">
         <%= label_tag :repo, 'Repository' %>
         <%= text_field_tag :repo, params[:repo], placeholder: 'Repository',
-                           class: 'px-3 py-2 rounded shadow' %>
+                           class: 'px-3 py-2 rounded shadow', required: true  %>
       </div>
       <div class="inline-block m-2">
         <%= label_tag :start_date, 'Author email' %>
         <%= text_field_tag :author_email, params[:author_email], placeholder: 'Author email',
-                           class: 'px-3 py-2 rounded shadow' %>
+                           class: 'px-3 py-2 rounded shadow', required: true  %>
       </div>
       <%= submit_tag 'Search', class: 'bg-teal-500 hover:bg-teal-600 border rounded py-2 px-3' %>
   <% end %>
@@ -25,4 +25,7 @@
     <div class="p-4 text-xl text-center">Nothing found, try search with other parameters</div>
   <% end %>
   <%= render @commits %>
+  <div class="text-center">
+    <%= paginate @commits %>
+  </div>
 </div>

@@ -1,5 +1,5 @@
 class Commit < ApplicationRecord
-
+  paginates_per 10
   def self.load(search_params)
     data_clean_up(search_params) if Commit.any? && search_params.present?
     response = DataImportService.new(search_params).get_commits

@@ -5,7 +5,7 @@ class CommitsController < ApplicationController
   # GET /commits.json
   def index
     Commit.load(search_params) if search_params.present?
-    @commits = Commit.all
+    @commits = Commit.all.page params[:page]
   end
 
   # GET /commits/1

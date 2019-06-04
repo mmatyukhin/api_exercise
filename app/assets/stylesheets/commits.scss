@@ -1,3 +1,46 @@
 // Place all the styles related to the Commits controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.pagination a, .pagination span.current, .pagination span.gap {
+    float: none;
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+    line-height: 38px;
+    text-decoration: none;
+    background-color: #38B2AC;
+    &:hover{
+      background-color: #319795;
+    }
+    border: 1px solid #DDD;
+    border-radius: .25rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.pagination {
+    border-left: 1px solid #ddd;
+    .first{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .prev {
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .page{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .next{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .last{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+}
