@@ -25,7 +25,11 @@ And complete its migrations with this
   ```
 You could use this application on http://localhost:3000/
 If its not available you(or me) did something wrong :)
-
-##Usage
+If you got any problem with js, you need to run this
+  ```
+  rake yarn:install
+  ```
+It should help
+## Usage
 With this application you can load commits from public github repositories.
 Just fill form with repository owner, its name and author of commits email.
