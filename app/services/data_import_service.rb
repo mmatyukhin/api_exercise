@@ -5,9 +5,9 @@ class DataImportService
   attr_reader :owner, :repo, :author_email
 
   def initialize(params)
-    @owner = params[:owner]
-    @repo = params[:repo]
-    @author_email = params[:author_email]
+    @owner = params[:owner].gsub(/\p{Cyrillic}/, '')
+    @repo = params[:repo].gsub(/\p{Cyrillic}/, '')
+    @author_email = params[:author_email].gsub(/\p{Cyrillic}/, '')
   end
 
   def get_commits
