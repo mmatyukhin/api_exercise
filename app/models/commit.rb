@@ -1,5 +1,6 @@
 class Commit < ApplicationRecord
   paginates_per 10
+
   def self.load(search_params)
     data_clean_up(search_params) if Commit.any? && search_params.present?
     response = DataImportService.new(search_params).get_commits
@@ -17,9 +18,11 @@ class Commit < ApplicationRecord
       end
     end
   end
+
   def self.response_check(response)
     response["message"] == "Not Found" if response.class == Hash
   end
+  
   def self.data_clean_up(search_params)
     Commit.delete_all
   end
